@@ -68,16 +68,39 @@ body{
 					}
 				}
 			}
+
+			.myfriends-status{
+				overflow: hidden;
+				.friend-status{
+					width: 420px;
+
+					#friendCanvasContainer{
+					}
+
+					#friendTodos{
+						
+					}
+
+					.friend-img{
+
+						.friend-pic{
+							width: 80px;
+						  height: 80px;
+						  -moz-border-radius: 50px;
+						  -webkit-border-radius: 50px;
+							border-radius: 50px;
+							display: block;
+						  margin-left: auto;
+						  margin-right: auto;
+						}
+					}
+				}
+			}
 		}
 	}
 }
 
- 
 
 
 
-.friend_pic{
- width: 30px;
- height: 30px; 
-}
 

@@ -1,4 +1,13 @@
 .main.hero-unit
+	#mainCanvasContainer
+		canvas#mainCanvas width=1100 height=500
+	#todos style="display:none;"
+		ul
+			- 1.step(30) do |x|
+				li = link_to "남자친구 만나기", "/"
+				li = link_to "디자인 공부하기", "/"
+				li = link_to "아침에 일찍 일어나기", "/"
+				li = link_to "책읽기", "/"
 	.main-loginbtn
 		- if user_signed_in?
 			strong = current_user.name
