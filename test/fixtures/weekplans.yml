@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  public_friends: false
+  public_all: false
+  user: 
+  progress_rate: 1
+
+two:
+  public_friends: false
+  public_all: false
+  user: 
+  progress_rate: 1

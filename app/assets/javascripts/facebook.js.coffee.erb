@@ -1,0 +1,39 @@
+jQuery ->
+  $('body').prepend('<div id="fb-root"></div>')
+
+  $.ajax
+    url: "#{window.location.protocol}//connect.facebook.net/ko_KR/all.js"
+    dataType: 'script'
+    cache: true
+
+
+window.fbAsyncInit = ->
+  FB.init(appId: '<%= ENV["FACEBOOK_APP_ID"] %>', cookie: true)
+
+  $('#login').click (e) ->
+    e.preventDefault()
+    FB.login (response) ->
+      window.location = '/users/auth/facebook/callback' if response.authResponse
+    , scope: "email, publish_stream"
+
+
+  $('#logout').click (e) ->
+    FB.getLoginStatus (response) ->
+      FB.logout() if response.authResponse
+    true
+
+  
+  if $('#logout').length > 0
+    FB.getLoginStatus (response) ->
+      if !response.authResponse 
+      #로그인이 안되어 있는 경우, 우리앱에 가입안된 사용자가 로그인한 경우
+        window.location = $('#logout').attr('href')
+      #여기에 response.authResponse.accessToken이 다른 경우, 로그인링크로 넘기기.. ? 
+
+  # facebook 액션에 '가입안한 친구 초대하기' 다이얼로그 띄우는 부분
+  $('#app_request').click (e) ->
+    FB.ui(
+      method: 'apprequests',
+      message: 'You should learn more about this awesome game.',
+      filters: ['app_non_users']
+    )

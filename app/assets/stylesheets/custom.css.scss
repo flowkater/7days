@@ -1,0 +1,52 @@
+@import "bootstrap";
+
+body{
+	padding-top: 60px;
+}
+
+
+.container.user-show{
+
+	.row{
+
+		.span4{
+			.hero-unit.my-unit{
+ 				padding: 20px;
+ 				
+ 				.profile_pic{
+				  width: 80px;
+				  height: 80px;
+				  -moz-border-radius: 50px;
+				  -webkit-border-radius: 50px;
+					border-radius: 50px;
+				}
+
+				.friends_profile_pic{
+					width: 30px;
+				  height: 30px;
+				  -moz-border-radius: 50px;
+				  -webkit-border-radius: 50px;
+					border-radius: 50px;	
+				}
+			}
+
+			.sticker{
+				
+			}
+		}
+
+		.span8{
+
+		}
+	}
+}
+
+ 
+
+
+
+.friend_pic{
+ width: 30px;
+ height: 30px; 
+}
+

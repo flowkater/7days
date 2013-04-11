@@ -1,0 +1,19 @@
+.navbar.navbar-googlebar.navbar-inverse.navbar-fixed-top
+	.navbar-inner
+		.container
+			a.btn.btn-navbar data-toggle="collapse" data-target=".new-collapse"
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			= link_to "7even-Days", root_path, class: "brand"
+			.nav-collapse.collapse#main-menu
+				ul.nav.pull-right#main-menu-right
+					/li
+						- if user_signed_in?
+							| Logged in as 
+							strong= current_user.name
+							= link_to "Logout", destroy_user_session_path, method: :delete, id: "logout"
+
+						- else
+							= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-inverse facebookbtn", id: "login"
+

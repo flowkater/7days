@@ -1,0 +1,8 @@
+.main.hero-unit
+	.main-loginbtn
+		- if user_signed_in?
+			strong = current_user.name
+			| &nbsp;&nbsp;&nbsp;
+			= link_to "Logout", destroy_user_session_path, method: :delete, id: "logout"
+		- else
+			= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary facebookbtn", id: "login"

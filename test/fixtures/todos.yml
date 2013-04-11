@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  weekplan: 
+  description: MyString
+  category_id: 1
+  todo_check: false
+
+two:
+  title: MyString
+  weekplan: 
+  description: MyString
+  category_id: 1
+  todo_check: false

@@ -1,0 +1,43 @@
+.container.user-show
+  .row
+    .span4
+      .hero-unit.my-unit
+        h5
+          = image_tag "https://graph.facebook.com/#{@user.uid}/picture?type=large", class: "profile_pic"
+          | &nbsp;&nbsp;
+          = @user.name
+        p 꼭 해내자! 이번주는 기적으로 내가 해내겠다!!
+        - (0..4).each do |x|
+          = image_tag "http://placehold.it/30x30", class: "friends_profile_pic"
+        | ...&nbsp;&nbsp;
+        a.btn.btn-primary more
+      ul.nav.nav-list
+        li.nav-header List Header
+        li.active
+          a href="#" My Weekplan
+        li
+          a href="#" Weekplan update
+        li
+          a href="#" Applications
+        li.divider
+        li
+          a href="#" Help
+      .sticker
+        h4 내가 받은 스티커
+        - (0..2).each do |x|
+          = image_tag "http://placehold.it/90x90"
+          | &nbsp;
+        .divider
+    .span8
+      .hero-unit
+        .alert
+          button.close data-dismiss="alert" type="button" x
+          b 4월 둘째주입니다!
+          | 이번주도 활기차게!
+        /- @weekplan.todos.each do |todo|
+          .media
+            a.pull-left href="#"
+              img.media-object src="//app.divshot.com/img/placeholder-64x64.gif"
+            .media-body
+              h4.media-heading = todo.title
+              p 지난 주에 일이 바빠서 좀 빠졌는데 이번주는 매일 가자!
