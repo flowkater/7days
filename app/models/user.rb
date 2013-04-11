@@ -66,7 +66,16 @@ class User < ActiveRecord::Base
 
   # 가입한 친구 찾기. IN연산자 이용 query문 남발 문제 해결
   def joined_friends
-    u = User.where('uid IN (?)', friends_uids)
-    # u = User.find_by_uid(friends_uids)
+    User.where('uid IN (?)', friends_uids)
+  end
+
+
+  # 유저의 이번주 weekplan 가져오기
+  def this_week
+    time = Time.now
+    thisWeekSunday = (Time.gm(time.year, time.month, time.day) - Time.now.wday * 86400)
+    thisWeekSaturday = thisWeekSunday + 6.days + 86399
+
+    weekplans.find(:first, conditions: ["created_at >= ? AND created_at <= ?", thisWeekSunday, thisWeekSaturday])
   end
 end

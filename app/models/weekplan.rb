@@ -8,7 +8,7 @@ class Weekplan < ActiveRecord::Base
   accepts_nested_attributes_for :todos, allow_destroy: true
 
   def self.thisweek
-  	time = Time.now
+     time = Time.now
 		thisWeekSunday = (Time.gm(time.year, time.month, time.day) - Time.now.wday * 86400)
 		thisWeekSaturday = thisWeekSunday + 6.days + 86399
 
@@ -19,11 +19,13 @@ class Weekplan < ActiveRecord::Base
     currentuser_this_week(current_user_id)
   end
 
-  def self.currentuser_this_week(current_user_id)
-    time = Time.now
-    thisWeekSunday = (Time.gm(time.year, time.month, time.day) - Time.now.wday * 86400)
-    thisWeekSaturday = thisWeekSunday + 6.days + 86399
 
-    self.find(:all, conditions: ["created_at >= ? AND created_at <= ? AND user_id == ?", thisWeekSunday, thisWeekSaturday, current_user_id])
-  end
+  # User 모델로 옮김
+  # def self.currentuser_this_week(current_user_id)
+  #   time = Time.now
+  #   thisWeekSunday = (Time.gm(time.year, time.month, time.day) - Time.now.wday * 86400)
+  #   thisWeekSaturday = thisWeekSunday + 6.days + 86399
+
+  #   self.find(:first, conditions: ["created_at >= ? AND created_at <= ? AND user_id == ?", thisWeekSunday, thisWeekSaturday, current_user_id])
+  # end
 end

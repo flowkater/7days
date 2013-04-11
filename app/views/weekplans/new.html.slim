@@ -10,13 +10,13 @@
         - (0..4).each do |x|
           = image_tag "http://placehold.it/30x30", class: "friends_profile_pic"
         | ...&nbsp;&nbsp;
-        a.btn.btn-primary more
+        a.btn.btn-primary.btn-small more
       ul.nav.nav-list
         - if @is_current_user
           li.nav-header 메뉴
-          li.active
-            = link_to "나의 7even-days", user_path(current_user)
           li
+            = link_to "나의 7even-days", user_path(current_user)
+          li.active
             = link_to "7even-days 수정하기", new_user_weekplan_path(current_user.id)
           li
             = link_to "Lorem ipsum", "#"
@@ -31,34 +31,62 @@
         | &nbsp;
         = image_tag "http://4.bp.blogspot.com/-d6f5Pk5LU14/UJXR3PyMQHI/AAAAAAAAZKE/AfF60_YQPy0/s1600/fuck-you-guys.jpg", class: "sticker-img"
         | &nbsp;
+        .divider
         = image_tag "http://4.bp.blogspot.com/-d6f5Pk5LU14/UJXR3PyMQHI/AAAAAAAAZKE/AfF60_YQPy0/s1600/fuck-you-guys.jpg", class: "sticker-img"
         | &nbsp;
         = image_tag "http://www.stro.co.kr/bigimage/16166_0.jpg", class: "sticker-img"
         | &nbsp;
+      .divider
+      .divider
+      .freinds_activity
+        h4  친구들의 최근 활동
         .divider
+        table.table
+          tbody
+            tr
+              td 준호가 재우에게 댓글을 달았다.
+            tr
+              td 재우가 '여자만나기'을(를) 완료하였다.
+            tr
+              td 준호가 '7even-days 개발' 을(를) 완료하였다.
+            tr
+              td 지원이가 준호에게 '될것같냐?' 스티커를 주었다.
     .span9
       .hero-unit
         .alert
           button.close data-dismiss="alert" type="button" x
           b 4월 둘째주입니다!
-          | 이번주도 활기차게!
+          | &nbsp;이번주도 활기차게!
+        = link_to "할일 추가하기", "#", class: "btn btn-success add-btn"
         / - @weekplan.todos.each do |todo|
         .todos
           .media
             = link_to "#", class: "pull-left" do
               = image_tag "http://cfile225.uf.daum.net/image/185E60104B4DC5CB6386C1", class: "media-object"
-            .media-body
+            .media-body            
               h4.media-heading 국선도매일가기
               p 지난 주에 일이 바빠서 좀 빠졌는데 이번주는 매일 가자!
+              .pull-right
+                = link_to "수정", "#", class: "btn btn-info update-btn"
+                = link_to "삭제", "#", class: "btn btn-danger delete-btn"
           .media
             = link_to "#", class: "pull-left" do
               = image_tag "http://cfs10.tistory.com/image/11/tistory/2010/01/04/20/08/4b41cc1394649", class: "media-object todo-img"
             .media-body
               h4.media-heading 수학공부하기
               p 수학이 좀 부족한거 같다. 공부하자!
+              .pull-right
+                = link_to "수정", "#", class: "btn btn-info update-btn"
+                = link_to "삭제", "#", class: "btn btn-danger delete-btn"
           .media
             = link_to "#", class: "pull-left" do
               = image_tag "http://cfile225.uf.daum.net/image/185E60104B4DC5CB6386C1", class: "media-object"
             .media-body
               h4.media-heading 국선도매일가기
               p 지난 주에 일이 바빠서 좀 빠졌는데 이번주는 매일 가자!
+              .pull-right
+                = link_to "수정", "#", class: "btn btn-info update-btn"
+                = link_to "삭제", "#", class: "btn btn-danger delete-btn"
+        br
+          .pull-right
+            = link_to "수정완료", "#", class: "btn btn-primary btn-large"
