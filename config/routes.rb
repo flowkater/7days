@@ -1,5 +1,4 @@
 Sevendays::Application.routes.draw do
-
   match "/facebook" => "main#facebook"
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"} do
@@ -15,6 +14,14 @@ Sevendays::Application.routes.draw do
   end
 
   root to: "main#home"
+
+  devise_for :admins, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admins"} do
+    match '/admins' => 'admins#index'
+    match "/admins/users" => "admins#show_users"
+    match "/admins/weekplans" => "admins#show_weekplans"
+
+    get '/admins/logout' => 'devise/sessions#destroy'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
