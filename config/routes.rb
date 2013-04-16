@@ -10,7 +10,7 @@ Sevendays::Application.routes.draw do
       get 'myfriends'
     end
 
-    resources :weekplans, only: [:new, :edit]
+    resources :weekplans, only: [:new, :edit, :create, :update]
   end
 
   root to: "main#home"

@@ -57,7 +57,7 @@
           button.close data-dismiss="alert" type="button" x
           b 4월 둘째주입니다!
           | &nbsp;이번주도 활기차게!
-        = form_for [@user, @weekplan], :url => new_user_weekplan_path do |f|
+        = form_for [@user, @weekplan] do |f|
           = link_to_add_fields "할일 추가하기", f, :todos
           = f.fields_for :todos do |builder|
             = render 'todo_fields', f: builder
