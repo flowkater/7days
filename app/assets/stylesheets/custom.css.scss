@@ -52,9 +52,23 @@ body{
 
 			.todos{
 				.media{
+					margin-top: 10px;
+					margin-bottom: 10px;
 					.media-body{
+						.todo-title{
+							width: 500px;
+						}
+						.todo-description{
+							width: 500px;
+							height: 50px;
+						}
+
 						.update-btn{
 							margin-right: 10px;
+						}
+
+						.delete-btn{
+							margin-left: 10px;	
 						}
 
 						p{
@@ -99,8 +113,5 @@ body{
 		}
 	}
 }
-
-
-
 
 

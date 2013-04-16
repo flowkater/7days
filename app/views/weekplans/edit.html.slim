@@ -59,10 +59,10 @@
           | &nbsp;이번주도 활기차게!
         = form_for [@user, @weekplan] do |f|
           = link_to_add_fields "할일 추가하기", f, :todos
-          = f.fields_for :todos do |builder|
-            = render 'todo_fields', f: builder
           .todos
             .todos-list
+              = f.fields_for :todos do |builder|
+                = render 'todo_fields', f: builder
             .pull-right
               = f.submit '저장하기', class: "btn btn-primary btn-large"
         /   .media

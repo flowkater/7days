@@ -15,6 +15,5 @@
 //= require jquery.tagcanvas.min
 //= require facebook
 //= require cloud
-
-
+//= require weekplan
 

@@ -1,9 +1,10 @@
 class Weekplan < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :progress_rate, :public_all, :public_friends
+  attr_accessible :progress_rate, :public_all, :public_friends, :todos_attributes
 
   # weekpaln and Todo model
-  has_many :todos, :dependent => :destroy
+  has_many :todos, dependent: :destroy
+
   # nested form
   accepts_nested_attributes_for :todos, allow_destroy: true
 

@@ -5,13 +5,13 @@ Sevendays::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"} do
     get '/users/logout' => 'devise/sessions#destroy'
   end
-  
 
   resources :users, only: [:show] do
     collection do
       get 'myfriends'
     end
-    resources :weekplans
+
+    resources :weekplans, only: [:new, :edit]
   end
 
   root to: "main#home"

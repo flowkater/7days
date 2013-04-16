@@ -1,0 +1,10 @@
+.media
+	= link_to "#", class: "pull-left" do
+     = image_tag "http://cfile225.uf.daum.net/image/185E60104B4DC5CB6386C1", class: "media-object"
+	.media-body
+		media-heading = f.text_field :title, class: "todo-title", placeholder: "어떤 일을 하실건가요?"
+		p = f.text_area :description, class: "todo-description", placeholder: "일에 대한 간단한 설명도 추가해주세요!"
+		= f.hidden_field :_destroy
+		.pull-right
+			= link_to "삭제", "#", class: "btn btn-danger delete-btn"
+
