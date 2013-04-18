@@ -23,6 +23,17 @@
           li.divider
           li
             = link_to "도움말", "#"
+      .freinds_activity
+        h4  친구들의 최근 활동
+        table
+          tbody
+        - activities.each do |activity|
+          tr
+            td 
+              ul #{render_activity activity}
+      .divider
+      .divider
+      .divider
       .sticker
         h4 내가 받은 스티커
         = image_tag "http://www.stro.co.kr/bigimage/16166_0.jpg", class: "sticker-img"

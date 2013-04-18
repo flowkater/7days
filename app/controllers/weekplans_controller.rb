@@ -2,11 +2,12 @@
 class WeekplansController < ApplicationController
 
   before_filter :authenticate_user!, only: [:new, :edit, :create, :update]
-
+  
   def new
     @user = current_user
     @is_current_user = current_user == @user
     @weekplan = current_user.this_week
+    @activities = PublicActivity::Activity.order("created_at desc")
     if @weekplan.blank?
       @weekplan = current_user.weekplans.build
     else
@@ -17,6 +18,7 @@ class WeekplansController < ApplicationController
   def edit
     @user = current_user
     @is_current_user = current_user == @user
+    @activities = PublicActivity::Activity.order("created_at desc")
     if @weekplan = current_user.this_week
       
     else

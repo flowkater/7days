@@ -1,4 +1,7 @@
 class Weekplan < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked owner: Proc.new{ |controller, model| controller.current_user }
+
   belongs_to :user
   attr_accessible :progress_rate, :public_all, :public_friends, :todos_attributes
 

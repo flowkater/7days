@@ -7,7 +7,7 @@ gem 'rails', '3.2.12'
 
 gem 'sqlite3'
 
-# view
+## view
 gem 'slim-rails'
 gem 'haml2slim'
 gem 'slim'
@@ -20,6 +20,8 @@ gem 'oauth2'
 gem 'omniauth-facebook', '1.4.0'
 gem 'koala'
 
+## real-time
+gem 'public_activity'
 
 # RESTful API
 gem 'rabl'
