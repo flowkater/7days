@@ -1,1 +1,1 @@
-| #{activity.owner.name}님이 요번 주 계획에 할 일 #{link_to("계획", user_path(id: activity.owner.id))}을 수정 하셨습니다
+| #{activity.owner.name}님이 요번 주 계획에 할 일 #{link_to(activity.trackable.title, user_path(id: activity.owner.id))}을 수정 하셨습니다

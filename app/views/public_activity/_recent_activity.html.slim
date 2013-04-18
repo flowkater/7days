@@ -1,0 +1,8 @@
+.freinds_activity
+        h4  친구들의 최근 활동
+        table
+          tbody
+        - activities.each do |activity|
+          tr
+            td 
+              ul #{render_activity activity}
